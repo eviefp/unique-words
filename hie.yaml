@@ -1,0 +1,13 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:str"
+
+    - path: "app/Main.hs"
+      component: "str:exe:str"
+
+    - path: "app/Paths_str.hs"
+      component: "str:exe:str"
+
+    - path: "test"
+      component: "str:test:str-test"
