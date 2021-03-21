@@ -6,10 +6,11 @@ module Main
 
 import Prelude
 
+import qualified ConduitStream
 import qualified Megaparsec
+import qualified PipesText
 import qualified StreamingBytestring
 import qualified StreamingStrings
 
-
 main :: IO ()
-main = StreamingBytestring.run
+main = ConduitStream.run

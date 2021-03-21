@@ -29,8 +29,7 @@ test =
 
 run :: IO ()
 run = do
-  m <- test
-  printMap m
+  test >>= printMap
   where
     printMap :: Map -> IO ()
     printMap =

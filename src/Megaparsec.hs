@@ -7,11 +7,11 @@ import Prelude
 import qualified Data.HashMap.Strict as HM
 import qualified Text.Megaparsec     as MP
 
-import qualified Data.Char    as C
-import           Data.Text    (Text)
-import qualified Data.Text    as T
-import qualified Data.Text.IO as LIO
-import           Data.Void    (Void)
+import qualified Data.Char         as C
+import           Data.Text.Lazy    (Text)
+import qualified Data.Text.Lazy    as T
+import qualified Data.Text.Lazy.IO as LIO
+import           Data.Void         (Void)
 
 
 type Map = HM.HashMap Text Int
