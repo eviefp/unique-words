@@ -1,15 +1,17 @@
-{-# OPTIONS_GHC -Wno-missing-export-lists #-}
-
-{-# language PartialTypeSignatures #-}
-module Lib
-  where
+module StreamingBytestring
+  ( run
+  ) where
 
 
 import qualified Data.ByteString.Builder    as B
-import           Data.ByteString.Lazy
-    (ByteString)
+import           Data.ByteString.Lazy       (ByteString)
 import qualified Data.ByteString.Lazy       as BS
+import qualified Data.Char                  as C
+import           Data.Function              (on)
 import qualified Data.HashMap.Strict        as HM
+import           Data.List                  (sortBy)
+import qualified Data.Text                  as T
+import qualified Data.Text.Encoding         as TE
 import           Prelude
 import qualified Streaming.ByteString.Char8 as SB
 import qualified Streaming.Prelude          as S
@@ -19,19 +21,11 @@ type Map = HM.HashMap ByteString Int
 test :: IO Map
 test =
   S.fold_ (HM.unionWith (+)) mempty id
-    . S.map go
+    . S.map (`HM.singleton` 1)
     . S.mapped SB.toLazy
-    $ SB.words SB.stdin
-
-{-# INLINE go #-}
-go :: ByteString -> HM.HashMap ByteString Int
-go bs = HM.singleton bs 1
-
-
-{-# INLINE gogo #-}
-gogo :: S.Stream (S.Of ByteString) IO x -> IO (S.Of Map x)
-gogo = S.fold (\x s -> (s, 1):x) [] (HM.fromListWith (+))
-
+    . SB.words
+    . SB.map C.toLower
+    $ SB.stdin
 
 run :: IO ()
 run = do
@@ -42,11 +36,12 @@ run = do
     printMap =
       BS.putStr
       . B.toLazyByteString
-      . HM.foldMapWithKey
-        (\k _ ->
+      . foldMap (\(k, v) ->
            mconcat
              [ B.lazyByteString k
              , B.byteString " "
-             , B.byteString "1"
+             , B.byteString . TE.encodeUtf8 . T.pack $ show v
              , B.byteString "\n"
              ])
+      . sortBy (compare `on` snd)
+      . HM.toList

@@ -20,13 +20,6 @@ description:         Please see the README on GitHub at <https://github.com/vlad
 
 dependencies:
 - base >= 4.7 && < 5
-- bytestring
-- mtl
-- streaming
-- streaming-bytestring
-- text
-- transformers
-- unordered-containers
 
 # Last updated as of ghc-8.10.2
 default-extensions:
@@ -104,6 +97,14 @@ ghc-options:
 
 library:
   source-dirs: src
+  dependencies:
+  - bytestring
+  - megaparsec
+  - streaming
+  - streaming-bytestring
+  - text
+  - transformers
+  - unordered-containers
 
 
 executables:

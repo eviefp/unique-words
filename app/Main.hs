@@ -1,9 +1,15 @@
+{-# OPTIONS_GHC -Wno-unused-imports #-}
+
 module Main
   ( main
   ) where
 
-import qualified Lib
-import           Prelude
+import Prelude
+
+import qualified Megaparsec
+import qualified StreamingBytestring
+import qualified StreamingStrings
+
 
 main :: IO ()
-main = Lib.run
+main = StreamingBytestring.run

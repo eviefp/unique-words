@@ -157,7 +157,7 @@ steps:
       #   > import qualified Data.List      as List (init, last, length)
       #
       # Default: after_alias
-      list_align: new_line
+      list_align: after_alias
 
       # Right-pad the module names to align imports in a group:
       #
