@@ -38,17 +38,3 @@ TODO after stream:
 - have one more go for the other versions without -threaded
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-(set-face-attribute 'default nil :height 150)
-

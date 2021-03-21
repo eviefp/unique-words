@@ -1,11 +1,10 @@
-name:                str
+name:                unique-words
 version:             0.1.0.0
-github:              "vladciobanu/str"
+github:              "vladciobanu/unique-words"
 license:             Unlicense
 author:              "Author name here"
 maintainer:          "example@example.com"
 copyright:           "2020 Author name here"
-
 extra-source-files:
 - README.md
 
@@ -16,7 +15,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/vladciobanu/str#readme>
+description:         Please see the README on GitHub at <https://github.com/vladciobanu/unique-words#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -107,22 +106,24 @@ library:
   - pipes-text
   - streaming
   - streaming-bytestring
+  - streamly
+  - streamly-bytestring
   - text
   - unordered-containers
 
 
 executables:
-  str:
+  unique-words:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
     - -rtsopts
     - -O2
     dependencies:
-    - str
+    - unique-words
 
 tests:
-  str-test:
+  unique-words-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -130,5 +131,5 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - str
+    - unique-words
 
