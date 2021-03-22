@@ -11,7 +11,7 @@ import qualified Data.Text           as T
 import qualified Data.Text.IO        as TIO
 
 import Conduit       ((.|))
-import Data.Char     (isPunctuation, toLower)
+import Data.Char     (isPunctuation)
 import Data.Foldable (traverse_)
 import Data.Function (on)
 import Data.List     (sortBy)
@@ -25,8 +25,6 @@ test =
   C.runConduitRes
      $ C.stdinC
     .| C.decodeUtf8C
-    -- .| C.filterCE (not . isPunctuation)
-    -- .| C.omapCE toLower
     .| CL.concatMap T.words
     .| C.mapC (T.toLower . T.filter (not . isPunctuation))
     .| C.foldlC (\hm k -> HM.insertWith (+) k 1 hm) mempty

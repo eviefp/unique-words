@@ -1,13 +1,13 @@
 cradle:
   cabal:
     - path: "src"
-      component: "lib:str"
+      component: "lib:unique-words"
 
     - path: "app/Main.hs"
-      component: "str:exe:str"
+      component: "unique-words:exe:unique-words"
 
-    - path: "app/Paths_str.hs"
-      component: "str:exe:str"
+    - path: "app/Paths_unique_words.hs"
+      component: "unique-words:exe:unique-words"
 
     - path: "test"
-      component: "str:test:str-test"
+      component: "unique-words:test:unique-words-test"
