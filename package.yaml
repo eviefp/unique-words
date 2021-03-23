@@ -98,16 +98,17 @@ library:
   source-dirs: src
   ghc-options:
     - -O2
-    - -fprof-auto
   dependencies:
   - bytestring
   - conduit
   - conduit-extra
+  - flatparse
   - hashable
   - lens
   - megaparsec
   - pipes
   - pipes-text
+  - pvar
   - streaming
   - streaming-bytestring
   - streamly
@@ -124,8 +125,6 @@ executables:
     ghc-options:
     - -rtsopts
     - -O2
-    - -fprof-auto
-    - -with-rtsopts=-p
     dependencies:
     - unique-words
 

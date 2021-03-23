@@ -25,7 +25,7 @@ What we want:
 - streaming + strings   ~ 1080ms
 - megaparsec            ~ 1620ms
 - pipes                 ~ 1970ms
-- conduit               ~  542ms
+- conduit bs            ~  542ms
 
 
 

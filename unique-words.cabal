@@ -27,6 +27,7 @@ library
       ConduitStream
       Megaparsec
       PipesText
+      Simple
       StreamingBytestring
       StreamingStrings
       StreamlyT
@@ -98,11 +99,13 @@ library
     , bytestring
     , conduit
     , conduit-extra
+    , flatparse
     , hashable
     , lens
     , megaparsec
     , pipes
     , pipes-text
+    , pvar
     , streaming
     , streaming-bytestring
     , streamly
