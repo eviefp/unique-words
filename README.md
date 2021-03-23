@@ -21,11 +21,14 @@ What we want:
 
 
 
-- streaming-bytestring: ~  750ms
-- streaming + strings   ~ 1080ms
-- megaparsec            ~ 1620ms
-- pipes                 ~ 1970ms
 - conduit bs            ~  542ms
+- conduit stream        ~  572ms
+- megaparsec            ~  879ms
+- pipes                 ~ 2090ms
+- simple                ~  305ms
+- streaming bs          ~  557ms
+- streaming str         ~  745ms
+- streamlyt             ~ 1010ms
 
 
 

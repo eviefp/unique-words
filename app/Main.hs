@@ -1,19 +1,19 @@
 {-# OPTIONS_GHC -Wno-unused-imports #-}
 
 module Main
-  ( main
-  ) where
+  ( main,
+  )
+where
 
+import ConduitBS qualified
+import ConduitStream qualified
+import Megaparsec qualified
+import PipesText qualified
+import Simple qualified
+import StreamingBytestring qualified
+import StreamingStrings qualified
+import StreamlyT qualified
 import Prelude
 
-import qualified ConduitBS
-import qualified ConduitStream
-import qualified Megaparsec
-import qualified PipesText
-import qualified Simple
-import qualified StreamingBytestring
-import qualified StreamingStrings
-import qualified StreamlyT
-
 main :: IO ()
-main = ConduitBS.run
+main = Simple.run
