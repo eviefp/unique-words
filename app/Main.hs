@@ -16,6 +16,7 @@ import Boarders qualified
 import StreamingBytestring qualified
 import StreamingStrings qualified
 import StreamlyT qualified
+import Pointers qualified
 
 main :: IO ()
-main = ConduitAccursed.run
+main = Pointers.run

@@ -29,6 +29,7 @@ library
       ConduitStream
       Megaparsec
       PipesText
+      Pointers
       StreamingBytestring
       StreamingStrings
       StreamlyT
@@ -100,6 +101,7 @@ library
     , bytestring
     , conduit
     , conduit-extra
+    , extra
     , flatparse
     , hashable
     , lens
