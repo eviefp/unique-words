@@ -5,15 +5,17 @@ module Main
   )
 where
 
+import Prelude
+
 import ConduitBS qualified
+import ConduitAccursed qualified
 import ConduitStream qualified
 import Megaparsec qualified
 import PipesText qualified
-import Simple qualified
+import Boarders qualified
 import StreamingBytestring qualified
 import StreamingStrings qualified
 import StreamlyT qualified
-import Prelude
 
 main :: IO ()
-main = Simple.run
+main = ConduitAccursed.run

@@ -1,0 +1,52 @@
+	Mon Mar 22 02:59 2021 Time and Allocation Profiling Report  (Final)
+
+	   unique-words +RTS -p -RTS
+
+	total time  =        0.47 secs   (466 ticks @ 1000 us, 1 processor)
+	total alloc = 1,039,070,336 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE                SRC                                %time %alloc
+
+run         StreamlyT             src/StreamlyT.hs:(44,1)-(53,17)     92.5   96.2
+hash        Data.HashMap.Internal Data/HashMap/Internal.hs:195:1-28    3.4    1.2
+singleton   Data.HashMap.Internal Data/HashMap/Internal.hs:558:1-37    2.1    2.3
+
+
+                                                                                                                                            individual      inherited
+COST CENTRE          MODULE                               SRC                                                            no.     entries  %time %alloc   %time %alloc
+
+MAIN                 MAIN                                 <built-in>                                                     230           0    0.0    0.0   100.0  100.0
+ CAF                 Main                                 <entire-module>                                                459           0    0.0    0.0     0.0    0.0
+  main               Main                                 app/Main.hs:18:1-20                                            460           1    0.0    0.0     0.0    0.0
+ CAF                 StreamlyT                            <entire-module>                                                457           0    0.0    0.0     0.0    0.0
+  run                StreamlyT                            src/StreamlyT.hs:(44,1)-(53,17)                                461           1    0.0    0.0     0.0    0.0
+ CAF                 Data.Word8                           <entire-module>                                                456           0    0.0    0.0     0.0    0.0
+  _space             Data.Word8                           Data/Word8.hs:191:1-19                                         467           1    0.0    0.0     0.0    0.0
+ CAF                 Streamly.Internal.Memory.Array.Types <entire-module>                                                455           0    0.0    0.0     0.0    0.0
+  defaultChunkSize   Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:1012:1-35          463           1    0.0    0.0     0.0    0.0
+   mkChunkSizeKB     Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:(1005,1)-(1006,17) 464           1    0.0    0.0     0.0    0.0
+    mkChunkSize      Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:1002:1-58          465           1    0.0    0.0     0.0    0.0
+ CAF                 Streamly.Internal.FileSystem.Handle  <entire-module>                                                448           0    0.0    0.0     0.0    0.0
+  realloc            Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:343:1-53           471           1    0.0    0.0     0.0    0.0
+ CAF                 Data.HashMap.Internal                <entire-module>                                                421           0    0.0    0.0     0.0    0.0
+  bitsPerSubkey      Data.HashMap.Internal                Data/HashMap/Internal.hs:2268:1-17                             479           1    0.0    0.0     0.0    0.0
+  empty              Data.HashMap.Internal                Data/HashMap/Internal.hs:554:1-13                              478           1    0.0    0.0     0.0    0.0
+ CAF                 GHC.Conc.Signal                      <entire-module>                                                341           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding                      <entire-module>                                                324           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding.Iconv                <entire-module>                                                322           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Handle.FD                     <entire-module>                                                314           0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Handle.Text                   <entire-module>                                                312           0    0.0    0.0     0.0    0.0
+ run                 StreamlyT                            src/StreamlyT.hs:(44,1)-(53,17)                                462           0   92.5   96.2   100.0  100.0
+  aStart             Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:191:7-12           469     2684144    0.0    0.0     0.0    0.0
+  aEnd               Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:192:7-10           468     1342006    0.0    0.0     0.0    0.0
+  sparseIndex        Data.HashMap.Internal                Data/HashMap/Internal.hs:2277:1-42                             481     1129071    0.4    0.0     0.4    0.0
+  singleton          Data.HashMap.Internal.Strict         Data/HashMap/Internal/Strict.hs:158:1-33                       474      748196    0.4    0.0     6.7    3.5
+   singleton         Data.HashMap.Internal                Data/HashMap/Internal.hs:558:1-37                              475      748196    2.1    2.3     6.2    3.5
+    hash             Data.HashMap.Internal                Data/HashMap/Internal.hs:195:1-28                              476      748196    3.4    1.2     4.1    1.2
+     hashPtrWithSalt Data.Hashable.Class                  src/Data/Hashable/Class.hs:(777,1)-(779,23)                    477      748196    0.6    0.0     0.6    0.0
+  copy               Data.HashMap.Internal.Array          Data/HashMap/Internal/Array.hs:(331,1)-(336,30)                482      100582    0.0    0.0     0.0    0.0
+  new_               Data.HashMap.Internal.Array          Data/HashMap/Internal/Array.hs:265:1-28                        480       50291    0.4    0.3     0.4    0.3
+  memcpy             Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:211:1-63           470         264    0.0    0.0     0.0    0.0
+  shrinkToFit        Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:(347,1)-(356,19)   466         134    0.0    0.0     0.0    0.0
+   realloc           Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:343:1-53           472           0    0.0    0.0     0.0    0.0
+    memcpy           Streamly.Internal.Memory.Array.Types src/Streamly/Internal/Memory/Array/Types.hs:211:1-63           473           2    0.0    0.0     0.0    0.0

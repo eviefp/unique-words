@@ -23,11 +23,12 @@ source-repository head
 
 library
   exposed-modules:
+      Boarders
+      ConduitAccursed
       ConduitBS
       ConduitStream
       Megaparsec
       PipesText
-      Simple
       StreamingBytestring
       StreamingStrings
       StreamlyT

@@ -1,6 +1,6 @@
 {-# language BangPatterns      #-}
 {-# language OverloadedStrings #-}
-module Simple
+module Boarders
   ( run
   ) where
 

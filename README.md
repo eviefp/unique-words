@@ -25,7 +25,7 @@ What we want:
 - conduit stream        ~  572ms
 - megaparsec            ~  879ms
 - pipes                 ~ 2090ms
-- simple                ~  305ms
+- boarders              ~  305ms
 - streaming bs          ~  557ms
 - streaming str         ~  745ms
 - streamlyt             ~ 1010ms
